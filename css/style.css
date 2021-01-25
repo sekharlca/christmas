@@ -1,0 +1,967 @@
+@import 'reset.css';
+
+/*header start*/
+
+header {
+    padding: 20px 0;
+}
+
+header .logo-block a {
+    font-family: var(--main-font);
+    font-size: 18px;
+    color: #000;
+    font-weight: 600;
+    line-height: 1.3;
+    transition: var(--trans);
+}
+
+header .logo-block a:hover{
+    color: var(--accent-color);
+}
+
+header nav ul li {
+    margin-left: 40px;
+}
+
+header nav ul li a {
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: 600;
+    position: relative;
+    padding: 12px 0;
+    transition: var(--trans);
+}
+
+header nav ul li a:hover{
+    color: var(--accent-color);
+}
+
+header nav ul li a::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--accent-color);
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: var(--trans);
+}
+
+header nav ul li a:hover::after {
+    background-color: var(--accent-color);
+}
+
+header nav ul li input {
+    display: none;
+}
+
+header nav ul li label {
+    display: block;
+    width: 26px;
+    height: 16px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    border-color: var(--text-color);
+}
+
+header nav ul li label::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: .3s;
+}
+
+header nav ul li input[type="checkbox"]:checked ~ label::after {
+    left: 11px;
+}
+
+/* mobile menu start */
+header nav.mobile-menu {  
+    cursor: pointer;
+    display: none; 
+}
+
+header nav.mobile-menu span{
+  display: block;
+  width: 25px;
+  height: 4px;
+  background: #123;
+  border-radius: 15px;
+  transition: .3s;
+}
+
+header nav.mobile-menu span:nth-child(even){
+  margin: 5px 0;
+}
+
+header nav.mobile-menu span:nth-child(1){
+  transform-origin: center;
+}
+
+header nav.mobile-menu span:nth-child(3){
+  transform-origin: center;
+}
+
+header nav.mobile-menu.cross span:nth-child(1){
+  transform: translateY(9px) rotate(45deg) ;
+}
+
+header nav.mobile-menu.cross span:nth-child(3){
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+header nav.mobile-menu.cross span:nth-child(even){
+/*  transform: translateX(80px);*/
+  opacity: 0;
+}
+
+header .slide-menu{
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 150px;
+  height: 100vh;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter:blur(30px);
+  border-right: 1px solid #dcdcdc;
+  color: #fff;
+  
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  transition: .5s;
+  transform: translateX(-100%);
+  z-index: 9999999;
+}
+
+header .slide-menu ul li{
+    margin-bottom: 15px;
+    text-align: center;
+    transform: translateX(-100%);
+    transition: .3s;
+}
+
+header .slide-menu ul li:nth-child(5){
+    margin-bottom: 0;
+}
+
+/*nav.mobile-menu:hover ~ .slide-menu{
+  transform: translateX(0);
+}*/
+
+/*mobile menu end */
+
+/* header end */
+
+/* banner start */
+
+.banner {
+    padding: 20px 0 50px 0;
+}
+
+.banner .text-block h1 {
+    font-size: 47px;
+    font-weight: 700;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.banner .text-block p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--gray-color);
+    line-height: 1.5;
+    padding: 25px 0;
+}
+
+.banner .text-block p span{
+    display: block;
+}
+/* banner end */
+
+/* share start */
+
+.share {
+    padding: 20px 0 50px 0;
+}
+
+.share .text-block h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.share .text-block h2 span{
+    display: block;
+}
+
+.share .text-block p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--gray-color);
+    line-height: 1.5;
+    padding: 25px 0;
+}
+
+.share .text-block p span{
+    display: block;
+}
+
+/* share end */
+
+/* decorations start */
+
+.decorations{
+    padding: 70px 0;
+} 
+
+.decorations h2{
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.decorations h2 span{
+    display: block;
+}
+
+.decorations .card .img-block img{
+    width: 90%;
+}
+
+.decorations .card .text-block h3{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color);
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+.decorations .card .text-block a{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--accent-color);
+    line-height: 1.3;
+}
+
+/* decorations end */
+
+/* accessories start */
+
+.accessories{
+    padding: 70px 0;
+} 
+
+.accessories h2{
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.accessories h2 span{
+    display: block;
+}
+
+.accessories .card{
+    padding: 30px 25px;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.accessories .card .img-block img{
+    width: 70%;
+}
+
+.accessories .card .text-block{
+    text-align: left;
+    padding-top: 10px;
+}
+
+.accessories .card .text-block h3{
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--gray-color);
+    line-height: 1.3;
+    margin-bottom: 5px;
+}
+
+.accessories .card .text-block p{
+    font-size: 15px;
+    font-weight: 400;
+    color: #aaa;
+    line-height: 1.3;
+}
+
+.accessories .card .text-block p span{
+    display: block;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-top: 15px;
+}
+
+.accessories .card .love{
+    width: 45px;
+    height: 45px;
+    background-color: var(--accent-color);
+    border-radius: 15px 0 15px 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    background-image: url(../images/heart.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto;
+}
+
+/* accessories end */
+
+/* gift start */
+
+.gift .block{
+    background-color: #DE3B49;
+    border-radius: 25px;
+    padding: 30px;
+}
+
+.gift .block .text-block h3{
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.3;
+    margin-bottom: 5px;
+}
+
+.gift .block .text-block p{
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.6;
+    margin: 30px 0;
+}
+
+.gift .block .text-block .input-group{
+    position: relative;
+}
+
+.gift .block .text-block .input-group input::placeholder{
+    font-size: 16px;
+    font-weight: 400;
+    color: #777;
+}
+
+.gift .block .text-block .input-group .form-control{
+    width: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.gift .block .text-block .input-group .btn{
+    display: inline-block;
+    padding: 15px 25px;
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+    outline: none;
+}
+
+/* gift end */
+
+/* footer start */
+
+footer{
+    padding-top: 130px;
+}
+
+footer .block h4 a{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color);
+    line-height: 1.3;
+    margin-bottom: 20px;
+    transition: var(--trans);
+}
+
+footer .block h4 a:hover{
+    color: var(--accent-color);
+}
+
+footer .block p{
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--gray-color);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+footer .block h3{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color);
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+footer .block ul li a{
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--gray-color);
+    line-height: 1.3;
+    margin-bottom: 20px;
+    transition: var(--trans);
+}
+
+footer .block ul li a:hover{
+    color: var(--accent-color);
+}
+
+footer .block .social-icon i.bx{
+    font-size: 26px;
+    color: var(--gray-color);
+    margin-right: 12px;
+    transition: var(--trans);
+}
+
+footer .block .social-icon i.bx:hover{
+    color: var(--accent-color);
+}
+
+footer .copyright-block{
+    padding: 60px 0 30px 0;
+}
+
+footer .copyright-block p{
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--gray-color);
+    line-height: 1.3;
+}
+
+/* footer end */
+
+
+
+/* DARK MODE STYLES START */
+
+body.dark {
+    background-color: #123;
+    transition: var(--trans);
+}
+
+body.dark header .logo-block a:hover{
+    color: var(--accent-color);
+}
+
+body.dark header .logo-block a {
+    color: #fff;
+}
+
+body.dark header nav ul li a {
+    color: #fff;
+}
+
+body.dark header nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+body.dark header nav ul li label{
+    border-color: #fff ;
+}
+
+body.dark header nav ul li label::after{
+    background-color: #fff;
+}
+
+/* mobile menu */
+
+body.dark header .mobile-menu span{
+    background-color: #fff;
+}
+
+body.dark header .slide-menu ul li a{
+    color: #fff;
+}
+
+body.dark header .slide-menu ul li label{
+    border-color: #fff ;
+}
+
+body.dark header .slide-menu ul li label::after{
+    background-color: #fff;
+}
+
+/* mobile menu */
+
+body.dark .share .text-block h2{
+    color: #fff;
+}
+
+body.dark .banner .text-block h1{
+    color: #fff;
+}
+
+body.dark .decorations h2{
+    color: #fff;
+}
+
+body.dark .accessories h2{
+    color: #fff;
+}
+
+body.dark footer .block h4 a{
+    color: #fff;
+}
+
+body.dark footer .block h3{
+    color: #fff;
+}
+
+body.dark footer .block h4 a:hover{
+    color: var(--accent-color);
+}
+
+/* DARK MODE STYLES END */
+
+
+/* responsive start */
+@media only screen and (max-width: 1400px) {
+    .container{
+        max-width: 1000px
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .container{
+        max-width: 1000px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .container{
+        max-width: 960px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container{
+        max-width: 720px;
+    }
+
+    header nav{
+        display: none;
+    }
+
+/* mobile menu */
+
+    #slide-menu  ul li input {
+        display: none;
+    }
+
+    #slide-menu ul li label {
+        display: block;
+        width: 26px;
+        height: 16px;
+        border: 2px solid #000;
+        border-radius: 20px;
+        position: relative;
+        cursor: pointer;
+        border-color: var(--text-color);
+        margin: 0 auto;
+    }
+
+    #slide-menu ul li label::after {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--text-color);
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        transition: .3s;
+    }
+
+
+    body.dark #slide-menu ul li label{
+        border-color: #fff;
+    }
+
+    body.dark #slide-menu ul li label::after{
+        background-color: #fff;
+        left: 11px;
+    } 
+
+    header nav.mobile-menu {  
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        flex-direction: column; 
+    }
+
+/* mobile menu */
+
+    .banner .text-block h1 {
+        font-size: 40px;
+    }
+
+    .banner .text-block p {
+        font-size: 15px;
+        padding: 20px 0;
+    }
+
+    .share .text-block h2 {
+        font-size: 25px;
+    }
+
+    .share .text-block p{
+        font-size: 14px;
+    }
+
+    .decorations{
+        padding: 30px;
+    }
+
+    .decorations h2{
+        font-size: 25px;
+    }
+
+    .decorations .card{
+        margin: 0;
+    }
+
+    .accessories{
+        padding: 30px 0
+    }
+
+    .accessories h2{
+        font-size: 25px;
+    }
+
+    .accessories .card{
+        width: 30%;
+        margin: 0 10px 20px 10px;
+    }
+
+    .gift .block .text-block h3{
+        font-size: 28px;
+    }
+
+    .gift .block .text-block p{
+        font-size: 15px;
+        margin: 20px 0;
+    }
+
+    footer .block p{
+        font-size: 15px;
+    }
+
+    footer .block ul li a{
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .container{
+        max-width: 580px;
+    }
+
+    header .container .jc-between{
+        justify-content: space-between;
+    }
+
+    header nav ul li:nth-child(1){
+        margin: 0;
+    }
+
+    .banner .text-block h1{
+        font-size: 32px;
+    }
+
+    .banner .text-block p{
+        font-size: 15px;
+        padding: 15px 0;
+    }
+
+    .btn{
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+
+    .share .text-block{
+        width: 100%;
+        order: 2;
+    }
+
+    .share .text-block h2{
+        font-size: 28px;
+    }
+
+    .share .text-block p{
+        font-size: 16px;
+        padding: 20px 0;
+    }
+
+    .share .img-block{
+        width: 100%;
+        order: 1;
+        text-align: center;
+    }
+
+    .share .img-block img{
+        width: 80%;
+    }
+
+    .decorations{
+        padding: 40px 0;
+    }
+
+    .decorations h2{
+        font-size: 24px;
+    }
+
+    .decorations .card{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .decorations .card .img-block img{
+        width: 80%;
+    }
+
+    .accessories{
+        padding: 40px 0;
+    }
+
+    .accessories h2{
+        font-size: 24px;
+    }
+
+    .accessories .card{
+        width: 45%;
+    }
+
+    .gift .block .text-block {
+        width: 100%;
+        order: 2;
+        text-align: center;
+    }
+
+    .gift .block .text-block p{
+        margin: 20px 0 30px 0;
+    }
+
+    .gift .block .img-block {
+        width: 100%;
+        order: 1;
+    }
+
+    .gift .block .text-block .input-group .btn{
+        right: 2%;
+    }
+
+    footer{
+        padding-top: 80px;
+    }
+
+    footer .block{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+    footer .block p {
+        padding-right: 22px;
+
+    }
+
+    footer .copyright-block{
+        padding: 30px 0;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .container{
+        max-width: 100%;
+    }
+
+    header .logo-block{ 
+      text-align: left;
+    }
+
+    header .logo-block a{
+        font-size: 22px;
+    }
+
+    .banner .text-block{
+        width: 100%;
+        order:2;
+    }
+
+    .banner .text-block h1{
+        font-size: 40px;
+    }
+
+    .banner .text-block p{
+        font-size: 16px;
+        padding: 30px 0;
+    }
+
+    .banner .img-block{
+        width: 100%;
+        order:1;
+        text-align: center;
+    }
+
+    .banner .img-block img{
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container{
+        max-width: 100%;
+    }
+
+    header .logo-block{
+        width: 50%;
+        text-align: left;
+        margin-bottom: 15px;
+    }
+
+    header nav.mobile-menu{
+        width: auto;
+        align-self: end;
+    }
+
+    header nav {
+        width: 100%;
+    }
+
+    header nav ul li.dark{
+        position: absolute;
+        top: 8%;
+        right: 8%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .container{
+        max-width: 100%;
+    }
+
+    header .logo-block{
+        width: 70%;
+        text-align: left;
+        margin-bottom: 15px;
+    }
+
+
+    header nav.mobile-menu{
+        width: auto;
+        align-self: end;
+    }
+
+    header nav {
+        width: 100%;
+        text-align: center;
+    }
+
+    header .container nav ul.jc-between{
+        display: block;
+    }
+
+    header .container nav ul li{
+        margin:0;
+    }
+
+    header nav ul li.dark{
+        position: absolute;
+        top: 8%;
+        right: 8%;
+    }
+
+    .accessories .card{
+        width: 100%;
+    }
+
+    .gift .block .text-block .input-group .btn{
+        right: 3%;
+    }
+}
+
+@media only screen and (max-width: 325px) {
+    .container{
+        max-width: 100%;
+    }
+
+    .banner .text-block h1{
+        font-size: 35px;
+    }
+
+    .banner .text-block p{
+        font-size: 16px;
+    }
+
+    .banner .text-block p span{
+        display: inline;
+    }
+
+    .share .text-block h2 {
+        font-size: 24px;
+    }
+
+    .share .text-block h2 span{
+        display: inline;
+    }
+
+    .share .text-block p span{
+        display: inline;
+    }
+
+    .decorations h2{
+        font-size: 20px;
+    }
+    .decorations h2 span{
+        display: inline;
+    }
+
+    .gift .block .text-block .input-group .btn{
+        width: 100%;
+        position: static;
+        margin-top: 40px;
+        background-color: #fff;
+        color: var(--accent-color);
+    }
+
+    .gift .block .text-block .input-group .form-control{
+        padding: 20px;
+    }
+
+    .gift .block .text-block .input-group .btn:hover{
+        background-color: #f75c69;
+        color:#fff;
+    }
+
+    footer .block{
+        width: 100%;
+    }
+}
+
+/* responsive end */
